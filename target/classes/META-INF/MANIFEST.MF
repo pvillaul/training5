@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: pablo
+Build-Jdk: 10.0.2
+Implementation-Title: springboot-test
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: wecc.examples
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/springboot-test
+Created-By: Maven Integration for Eclipse
+

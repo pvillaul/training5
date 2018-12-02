@@ -1,0 +1,32 @@
+language: java
+
+jdk:
+  - openjdk8
+
+sudo: required
+
+services:
+  - docker
+
+env:
+  global:
+    - REGISTRY_USER=pvillaul
+    - REGISTRY_PASS=nicobellic69
+    - secret: "<something long>"
+
+script:
+  - mvn clean verify
+  - docker build --tag pvillaul/training5 .
+  - docker run pvillaul/training5
+
+after_script:
+  - docker images
+
+before_deploy:
+  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+
+deploy:
+  provider: script
+  script: docker push pvillaul/training5
+  on:
+    branch: master
