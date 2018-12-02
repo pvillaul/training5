@@ -9,12 +9,10 @@ env:
   global:
     - REGISTRY_USER=pvillaul
     - REGISTRY_PASS=nicobellic69
-    - secret: "<something long>"
 
 script:
   - mvn clean verify
   - docker build --tag pvillaul/training5 .
-  - docker run pvillaul/training5
 
 after_script:
   - docker images
